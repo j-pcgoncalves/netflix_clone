@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { BellIcon, MagnifyingGlassIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
+import AccountMenu from "@/components/AccountMenu";
 import MobileMenu from "@/components/MobileMenu";
 import NavbarItem from "@/components/NavbarItem";
 
@@ -58,6 +59,13 @@ const Navbar = () => {
                     </div>
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
                         <BellIcon className="w-6" />
+                    </div>
+                    <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
+                        <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
+                            <img src="/images/default-blue.png" alt="User Image" />
+                        </div>
+                        <ChevronDownIcon className={`w-4 text-white fill-white transition ${showAccountMenu ? "rotate-180" : "rotate-0"}`} />
+                        <AccountMenu visible={showAccountMenu} />
                     </div>
                 </div>
             </div>

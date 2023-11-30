@@ -52,6 +52,14 @@ const Navbar = () => {
                     <ChevronDownIcon className={`w-4 text-white fill-white transition ${showMobileMenu ? "rotate-180" : "rotate-0"}`} />
                     <MobileMenu visible={showMobileMenu} />
                 </div>
+                <div className="flex flex-row ml-auto gap-7 items-center">
+                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+                        <MagnifyingGlassIcon className="w-6" />
+                    </div>
+                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+                        <BellIcon className="w-6" />
+                    </div>
+                </div>
             </div>
         </nav>
     );

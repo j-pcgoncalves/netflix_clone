@@ -2,6 +2,7 @@ import React from "react";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 
+import Navbar from "@/components/Navbar";
 import InfoModal from "@/components/InfoModal";
 import useInfoModalStore from "@/hooks/useInfoModalStore";
 
@@ -28,6 +29,7 @@ const Home = () => {
   return (
     <>
       <InfoModal visible={isOpen} onClose={closeModal} />
+      <Navbar />
     </>
   )
 }

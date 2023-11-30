@@ -2,6 +2,9 @@ import React from "react";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 
+import InfoModal from "@/components/InfoModal";
+import useInfoModalStore from "@/hooks/useInfoModalStore";
+
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
 
@@ -20,8 +23,11 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 const Home = () => {
+  const { isOpen, closeModal } = useInfoModalStore();
+
   return (
     <>
+      <InfoModal visible={isOpen} onClose={closeModal} />
     </>
   )
 }

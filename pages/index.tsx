@@ -3,6 +3,7 @@ import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 
 import Navbar from "@/components/Navbar";
+import Billboard from "@/components/Billboard";
 import InfoModal from "@/components/InfoModal";
 import useInfoModalStore from "@/hooks/useInfoModalStore";
 
@@ -30,6 +31,7 @@ const Home = () => {
     <>
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
+      <Billboard />
     </>
   )
 }
